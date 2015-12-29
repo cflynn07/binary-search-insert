@@ -18,50 +18,34 @@ function binarySearchInsert (sortedArray, item, comparator) {
 
   if (high === -1) {
     sortedArray.push(item);
-    return sortedArray;
+    return 0;
   }
 
+  if (high === 0) {
+    let cmp = comparator(sortedArray[0], item);
+    if (cmp < 0.0) {
+      sortedArray.push(item);
+    } else {
+      sortedArray.unshift(item);
+    }
+    return 0;
+  }
+
+  var mid;
   while (low <= high) {
     // https://github.com/darkskyapp/binary-search
     // http://googleresearch.blogspot.com/2006/06/extra-extra-read-all-about-it-nearly.html
-    let mid = low + (high - low >> 1);
+    mid = low + (high - low >> 1);
     let cmp = comparator(sortedArray[mid], item);
-    if (cmp < 0.0) {
+    if (cmp <= 0.0) {
       // searching too low
-      if (mid + 1 > lastIndex) {
-        // place item at end of array
-        sortedArray.push(item);
-        return sortedArray;
-      }
-
-      let cmp2 = comparator(sortedArray[mid + 1], item);
-      if (cmp2 >= 0.0) {
-        // right item is too high or equal, insert in item to right of mid
-        sortedArray.splice(mid + 1, 0, item);
-        return sortedArray;
-      }
-
       low = mid + 1;
-    } else if (cmp > 0.0) {
-      // searching too high
-      if (mid === 0) {
-        // place item at beginning of array
-        sortedArray.splice(0, 0, item);
-        return sortedArray;
-      }
-
-      let cmp2 = comparator(sortedArray[mid - 1], item);
-      if (cmp2 <= 0.0) {
-        // left item is too low or equal, insert in item to left of mid
-        sortedArray.splice(mid - 1, 0, item);
-        return sortedArray;
-      }
-
-      high = mid - 1;
     } else {
-      // mid equals item
-      sortedArray.splice(mid, 0, item);
-      return sortedArray;
+      // searching too high
+      high = mid - 1;
     }
   }
+
+  sortedArray.splice(mid, 0, item)
+  return mid;
 }
