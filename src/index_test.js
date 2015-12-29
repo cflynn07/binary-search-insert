@@ -75,7 +75,7 @@ describe('lib/index', function () {
     done();
   });
 
-  it('should handle sortedArray of length 2^18', function (done) {
+  it('should handle sortedArray of length 2^20', function (done) {
     var len = Math.pow(2, 20);
     var sortedArraySequentialValues = [];
     var sortedArrayDuplicateValues = [];
