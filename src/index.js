@@ -25,10 +25,11 @@ function binarySearchInsert (sortedArray, item, comparator) {
     let cmp = comparator(sortedArray[0], item);
     if (cmp < 0.0) {
       sortedArray.push(item);
+      return 1;
     } else {
       sortedArray.unshift(item);
+      return 0;
     }
-    return 0;
   }
 
   var mid;
