@@ -1,28 +1,14 @@
 /**
- * 
+ * Insert elements into sorted array using binary search to indentify correct index
  */
 
 module.exports = binarySearchInsert
 
 /**
- * Value falls between two values
- * 4
- * [0, 3, 5, 7, 9]
- * [0, 3, 4, 5, 7, 9]
- *
- * Value is equal to a value
- * 5
- * [0, 3, 5, 7, 9]
- * [0, 3, 4, 5, 5, 7, 9]
- *
- * Value is equal to a value
- * 5
- * [0, 3, 5, 5, 7, 9]
- * [0, 3, 4, 5, 5, 7, 9]
- */
-
-/**
- *
+ * @param {Array} sortedArray
+ * @param {*} item
+ * @param {Function} comparator
+ * @return {Array}
  */
 function binarySearchInsert (sortedArray, item, comparator) {
   var low = 0;
