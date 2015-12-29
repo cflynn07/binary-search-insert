@@ -9,7 +9,7 @@ module.exports = binarySearchInsert
  * @param {Array} sortedArray
  * @param {*} item
  * @param {Function} comparator
- * @return {Array}
+ * @return Number
  */
 function binarySearchInsert (sortedArray, item, comparator) {
   var low = 0;
