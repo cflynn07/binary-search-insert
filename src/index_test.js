@@ -1,5 +1,5 @@
 /**
- *
+ * @module lib/index_test
  */
 
 var Code = require('Code');

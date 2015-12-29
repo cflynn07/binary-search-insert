@@ -1,5 +1,6 @@
 /**
  * Insert elements into sorted array using binary search to indentify correct index
+ * @module lib/index
  */
 
 module.exports = binarySearchInsert
