@@ -41,6 +41,11 @@ var indexInsertedAt = binarySearchInsert(sortedArray, 6, function comparator (a,
 // sortedArray: [1, 3, 5, 6, 7, 9, 11]
 ```
 
+Benchmarks
+----------
+http://jsperf.com/cflynn07-binary-search-insert-vs-linear-search-insert  
+![Performance](https://cloud.githubusercontent.com/assets/467885/12046878/7c2d98ca-ae76-11e5-8eee-34bb01c2e09b.png)
+
 Testing
 -------
 ```
