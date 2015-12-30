@@ -24,8 +24,19 @@ Usage
 var binarySearchInsert = require('binary-search-insert');
 var sortedArray = [1, 3, 5, 7, 9, 11];
 
-// will mutate sortedArray and return index of inserted value
-var indexInsertedAt = binarySearchInsert(sortedArray, 6);
+/**
+ * Mutates sortedArray and returns index of inserted value
+ * @param {Array} A sorted array
+ * @param {*} An item to insert in the sorted array
+ * @param {Function} A comparator function that takes two arguments and returns a number. The first
+ *   argument will be a member of sortedArray, the second argument will be item.
+ *   If item < member, return value < 0
+ *   If item > member, return value > 0
+ * @returns {Number} index of array where item is inserted
+ */
+var indexInsertedAt = binarySearchInsert(sortedArray, 6, function comparator (a, b) {
+  return a - b;
+});
 // indexInsertedAt: 3
 // sortedArray: [1, 3, 5, 6, 7, 9, 11]
 ```
