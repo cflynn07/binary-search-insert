@@ -20,7 +20,7 @@ $ npm install binary-search-insert
 
 Usage
 -----
-```
+```js
 var binarySearchInsert = require('binary-search-insert');
 var sortedArray = [1, 3, 5, 7, 9, 11];
 
