@@ -2,7 +2,7 @@
  * @module lib/index_test
  */
 
-var Code = require('Code');
+var Code = require('code');
 var Lab = require('lab');
 
 var binarySearchInsert = require('./index');
