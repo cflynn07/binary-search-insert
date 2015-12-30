@@ -10,16 +10,10 @@
     "test-cov": "mkdir coverage; touch coverage/coverage.html; rm coverage/coverage.html; lab -c -r html lib/ > coverage/coverage.html; open -a 'Google Chrome' coverage/coverage.html"
   },
   "keywords": [
-    "binary",
-    "search",
-    "search",
-    "sorted",
-    "array",
-    "array",
-    "insert",
-    "fast",
-    "array",
-    "insert"
+    "array fast insert",
+    "binary search",
+    "array insert"
+    "sorted array",
   ],
   "author": "Casey Flynn <cflynn.us@gmail.com>",
   "license": "MIT",
