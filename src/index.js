@@ -12,16 +12,16 @@ module.exports = binarySearchInsert
  * @return Number
  */
 function binarySearchInsert (sortedArray, item, comparator) {
-  var low = 0;
   var high = sortedArray.length - 1;
   var lastIndex = high;
+  var low = 0;
+  var mid;
 
   if (high === -1) {
     sortedArray.push(item);
     return 0;
   }
 
-  var mid;
   while (low <= high) {
     // https://github.com/darkskyapp/binary-search
     // http://googleresearch.blogspot.com/2006/06/extra-extra-read-all-about-it-nearly.html
