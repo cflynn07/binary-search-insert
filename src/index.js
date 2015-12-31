@@ -21,17 +21,6 @@ function binarySearchInsert (sortedArray, item, comparator) {
     return 0;
   }
 
-  if (high === 0) {
-    let cmp = comparator(sortedArray[0], item);
-    if (cmp < 0.0) {
-      sortedArray.push(item);
-      return 1;
-    } else {
-      sortedArray.unshift(item);
-      return 0;
-    }
-  }
-
   var mid;
   while (low <= high) {
     // https://github.com/darkskyapp/binary-search
@@ -44,6 +33,13 @@ function binarySearchInsert (sortedArray, item, comparator) {
     } else {
       // searching too high
       high = mid - 1;
+    }
+  }
+
+  if (mid === lastIndex) {
+    let cmp = comparator(sortedArray[mid], item);
+    if (cmp <= 0.0) {
+      mid++;
     }
   }
 

@@ -45,6 +45,37 @@ describe('lib/index', function () {
     done();
   });
 
+  it('should insert item if sortedArray has length 2', function (done) {
+    // value should go at end
+    var sortedArray = [1, 3];
+    var item = 4;
+
+    binarySearchInsert(sortedArray, item, comparator);
+    expect(sortedArray.length).to.equal(3);
+    expect(sortedArray[0]).to.equal(1);
+    expect(sortedArray[1]).to.equal(3);
+    expect(sortedArray[2]).to.equal(4);
+
+    // value should to at beginning
+    sortedArray = [1, 3];
+    item = 0;
+    binarySearchInsert(sortedArray, item, comparator);
+    expect(sortedArray.length).to.equal(3);
+    expect(sortedArray[0]).to.equal(0);
+    expect(sortedArray[1]).to.equal(1);
+    expect(sortedArray[2]).to.equal(3);
+
+    // value should go in middle
+    sortedArray = [1, 3];
+    item = 2;
+    binarySearchInsert(sortedArray, item, comparator);
+    expect(sortedArray.length).to.equal(3);
+    expect(sortedArray[0]).to.equal(1);
+    expect(sortedArray[1]).to.equal(2);
+    expect(sortedArray[2]).to.equal(3);
+    done();
+  });
+
   it('should place item in sortedArray between lower and higher values', function (done) {
     var sortedArray = [1, 3, 5, 7];
     var sortedArrayTarget = [1, 3, 4, 5, 7];
