@@ -9,8 +9,8 @@ binary-search-insert
 [![NPM](https://nodei.co/npm/binary-search-insert.png?compact=true)](https://nodei.co/npm/binary-search-insert/)
 
 A library for performing a binary search and insert into a sorted array.  
-Binary search has a time complexity of O(log(n)) which is substantially faster than a linear search
-with a time complexity of O(n).
+Binary search has an average time complexity of O(log(n)) which is substantially faster than a linear search
+with an average time complexity of O(n).
 
 Installing
 ----------
@@ -20,7 +20,7 @@ $ npm install binary-search-insert
 
 Usage
 -----
-```
+```js
 var binarySearchInsert = require('binary-search-insert');
 var sortedArray = [1, 3, 5, 7, 9, 11];
 
