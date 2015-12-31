@@ -136,4 +136,16 @@ describe('lib/index', function () {
     ]);
     done();
   });
+
+  it('should handle the following array', function (done) {
+    var sortedArray = [148, 20535, 20555, 53125, 73634, 94455];
+    var len = sortedArray.length;
+    var item = 63772;
+    binarySearchInsert(sortedArray, item, comparator);
+    expect(sortedArray.length).to.equal(len + 1);
+    expect(sortedArray).to.deep.equal([
+      148, 20535, 20555, 53125, 63772, 73634, 94455
+    ]);
+    done();
+  });
 });
