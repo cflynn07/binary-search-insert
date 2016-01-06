@@ -23,6 +23,7 @@ Usage
 ```js
 var binarySearchInsert = require('binary-search-insert');
 var sortedArray = [1, 3, 5, 7, 9, 11];
+var comparator = function (a, b) { return a - b; }
 
 /**
  * Mutates sortedArray and returns index of inserted value
@@ -34,9 +35,7 @@ var sortedArray = [1, 3, 5, 7, 9, 11];
  *   If item > member, return value > 0
  * @returns {Number} index of array where item is inserted
  */
-var indexInsertedAt = binarySearchInsert(sortedArray, 6, function comparator (a, b) {
-  return a - b;
-});
+var indexInsertedAt = binarySearchInsert(sortedArray, comparator, 6);
 // indexInsertedAt: 3
 // sortedArray: [1, 3, 5, 6, 7, 9, 11]
 ```
