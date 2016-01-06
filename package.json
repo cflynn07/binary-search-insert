@@ -1,6 +1,6 @@
 {
   "name": "binary-search-insert",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "Binary search insert values into sorted arrays with comparator functions",
   "main": "lib/index.js",
   "scripts": {
