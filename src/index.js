@@ -7,11 +7,11 @@ module.exports = binarySearchInsert
 
 /**
  * @param {Array} sortedArray
- * @param {*} item
  * @param {Function} comparator
+ * @param {*} item
  * @return Number
  */
-function binarySearchInsert (sortedArray, item, comparator) {
+function binarySearchInsert (sortedArray, comparator, item) {
   var high = sortedArray.length - 1;
   var lastIndex = high;
   var low = 0;
