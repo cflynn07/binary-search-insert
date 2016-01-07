@@ -10,7 +10,7 @@ binary-search-insert
 
 A library for performing a binary search and insert into a sorted array.  
 Binary search has an average time complexity of O(log(n)) which is substantially faster than a linear search
-with an average time complexity of O(n). It's useful with immutable data ([seamless-immutable](https://github.com/rtfeldman/seamless-immutable))
+with an average time complexity of O(n).
 
 Installing
 ----------
@@ -23,7 +23,7 @@ Usage
 ```js
 var binarySearchInsert = require('binary-search-insert');
 var sortedArray = [1, 3, 5, 7, 9, 11];
-var comparator = (a, b) => { return a - b; };
+var comparator = function (a, b) { return a - b; }
 
 /**
  * Mutates sortedArray and returns index of inserted value
@@ -39,24 +39,6 @@ var indexInsertedAt = binarySearchInsert(sortedArray, comparator, 6);
 // indexInsertedAt: 3
 // sortedArray: [1, 3, 5, 6, 7, 9, 11]
 ```
-
-
-```js
-// Useful with immutable data
-// https://github.com/rtfeldman/seamless-immutable
-var Immutable = require('seamless-immutable');
-
-// Perform sort with O(log(n)) time complexity and O(n) space complexity
-var immutableArray = Immutable([{name: 'David'}, {name: 'Alison'}, {name: 'Zach'}]);
-var comparator = (a, b) => { return (b === undefined) ? -1 : a.name.localeCompare(b.name); };
-var newSortedArray = new Array(immutableArray.length);
-var binarySearchInsert = require('binary-search-insert').bind(this, newSortedArray, comparator);
-immutableArray.forEach(binarySearchInsert);
-// newSortedArray: [{name: 'Alison'}, {name: 'David'}, {name: 'Zach'}]
-```
-
-### Useful 
-[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)
 
 Benchmarks
 ----------
