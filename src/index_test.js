@@ -14,7 +14,11 @@ var expect = Code.expect;
 var it = lab.it;
 
 describe('lib/index', function () {
-  var comparator = function (a, b) { return a - b; };
+  var comparator = function (a, b) {
+    expect(a).to.exist();
+    expect(b).to.exist();
+    return a - b;
+  };
 
   it('should insert item if sortedArray is empty', function (done) {
     var sortedArray = [];

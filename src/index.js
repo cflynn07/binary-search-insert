@@ -17,6 +17,11 @@ function binarySearchInsert (sortedArray, comparator, item) {
   var low = 0;
   var mid = 0;
 
+  if (sortedArray.length === 0) {
+    sortedArray.push(item);
+    return 0;
+  }
+
   while (low <= high) {
     // https://github.com/darkskyapp/binary-search
     // http://googleresearch.blogspot.com/2006/06/extra-extra-read-all-about-it-nearly.html
